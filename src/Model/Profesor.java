@@ -1,3 +1,5 @@
+package Model;
+
 public class Profesor extends Persona{
 
     private String especialidad;
@@ -17,6 +19,6 @@ public class Profesor extends Persona{
 
     @Override
     public void mostrarDetalles() {
-        System.out.println("Profesor: " + getNombre() + " - " + getEspecialidad());
+        System.out.println("Model.Profesor: " + getNombre() + " - " + getEspecialidad());
     }
 }

@@ -1,6 +1,8 @@
+package Model;
+
 import java.util.ArrayList;
 
-public class Alumno extends Persona{
+public class Alumno extends Persona {
 
     private int edad;
     private ArrayList<Matricula> matriculas;
@@ -33,11 +35,11 @@ public class Alumno extends Persona{
 
     @Override
     public void mostrarDetalles() {
-        System.out.println("Alumno: " + getNombre());
+        System.out.println("Model.Alumno: " + getNombre());
 
         for (Matricula m : matriculas) {
-            System.out.println("Asignatura: " + m.getAsignatura().getNombre() +
-                    " Profesor: " + m.getProfesor().getNombre() +
+            System.out.println("Model.Asignatura: " + m.getAsignatura().getNombre() +
+                    " Model.Profesor: " + m.getProfesor().getNombre() +
                     " Nota: " + m.getNota());
         }
     }

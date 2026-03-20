@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.ArrayList;
 
 public class Curso {
@@ -39,7 +41,7 @@ public class Curso {
         }
 
         for (Asignatura as : asignaturas) {
-            System.out.println("Asignatura: " + as.getNombre());
+            System.out.println("Model.Asignatura: " + as.getNombre());
         }
 
         for (Profesor p : profesores) {
