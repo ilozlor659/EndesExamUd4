@@ -34,7 +34,8 @@ public class Curso {
         System.out.println("CURSO: " + nombre);
 
         for (Alumno a : alumnos) {
-            System.out.println("Alumno: " + a.getNombre());
+            System.out.print("Alumnos: ");
+            a.mostrarDetalles();
         }
 
         for (Asignatura as : asignaturas) {
@@ -42,7 +43,8 @@ public class Curso {
         }
 
         for (Profesor p : profesores) {
-            System.out.println("Profesor: " + p.getNombre());
+            System.out.print("Profesores: ");
+            p.mostrarDetalles();
         }
     }
 }

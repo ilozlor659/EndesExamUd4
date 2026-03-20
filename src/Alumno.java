@@ -31,7 +31,8 @@ public class Alumno extends Persona{
         matriculas.add(m);
     }
 
-    public void mostrarDatos() {
+    @Override
+    public void mostrarDetalles() {
         System.out.println("Alumno: " + getNombre());
 
         for (Matricula m : matriculas) {

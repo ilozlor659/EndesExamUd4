@@ -1,4 +1,4 @@
-public class Persona {
+public abstract class Persona {
     private String nombre;
 
     public Persona(String nombre) {
@@ -12,4 +12,6 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public abstract void mostrarDetalles();
 }

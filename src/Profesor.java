@@ -15,7 +15,8 @@ public class Profesor extends Persona{
         this.especialidad = especialidad;
     }
 
-    public void mostrar() {
+    @Override
+    public void mostrarDetalles() {
         System.out.println("Profesor: " + getNombre() + " - " + getEspecialidad());
     }
 }
