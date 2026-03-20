@@ -1,23 +1,14 @@
 import java.util.ArrayList;
 
-public class Alumno {
+public class Alumno extends Persona{
 
-    private String nombre;
     private int edad;
     private ArrayList<Matricula> matriculas;
 
     public Alumno(String nombre, int edad) {
-        this.nombre = nombre;
+        super(nombre);
         this.edad = edad;
         this.matriculas = new ArrayList<>();
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public int getEdad() {
@@ -41,7 +32,7 @@ public class Alumno {
     }
 
     public void mostrarDatos() {
-        System.out.println("Alumno: " + nombre);
+        System.out.println("Alumno: " + getNombre());
 
         for (Matricula m : matriculas) {
             System.out.println("Asignatura: " + m.getAsignatura().getNombre() +
