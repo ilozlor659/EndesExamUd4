@@ -1,8 +1,15 @@
+package Service;
+
+import Model.Alumno;
+import Model.Asignatura;
+import Model.Matricula;
+import Model.Profesor;
+
 import java.util.ArrayList;
 
 public class GestorMatriculas {
 
-    public ArrayList<Matricula> matriculas;
+    private ArrayList<Matricula> matriculas;
 
     public GestorMatriculas() {
         matriculas = new ArrayList<>();
@@ -24,28 +31,28 @@ public class GestorMatriculas {
     public void mostrarTodas() {
         for (Matricula m : matriculas) {
             System.out.println(
-                m.alumno.nombre + " - " +
-                m.asignatura.nombre + " - " +
-                m.profesor.nombre + " - " +
-                m.nota
+                m.getAlumno().getNombre() + " - " +
+                m.getAsignatura().getNombre() + " - " +
+                m.getProfesor().getNombre() + " - " +
+                m.getNota()
             );
         }
     }
 
     public void mostrarAprobados() {
         for (Matricula m : matriculas) {
-            if (m.nota >= 5) {
-                System.out.println("APROBADO: " + m.alumno.nombre);
+            if (m.getNota() >= 5) {
+                System.out.println("APROBADO: " + m.getAlumno().getNombre());
             }
         }
     }
 
     public void subirNotaTodos(double puntos) {
         for (Matricula m : matriculas) {
-            m.nota = m.nota + puntos;
+            m.setNota(m.getNota() + puntos);
 
-            if (m.nota > 10) {
-                m.nota = 10;
+            if (m.getNota() > 10) {
+                m.setNota(10);
             }
         }
     }
@@ -54,7 +61,7 @@ public class GestorMatriculas {
         double suma = 0;
 
         for (Matricula m : matriculas) {
-            suma += m.nota;
+            suma += m.getNota();
         }
 
         if (matriculas.size() == 0) return 0;

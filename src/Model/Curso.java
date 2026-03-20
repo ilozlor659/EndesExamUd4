@@ -1,17 +1,23 @@
+package Model;
+
 import java.util.ArrayList;
 
 public class Curso {
 
-    public String nombre;
-    public ArrayList<Alumno> alumnos;
-    public ArrayList<Asignatura> asignaturas;
-    public ArrayList<Profesor> profesores;
+    private String nombre;
+    private ArrayList<Alumno> alumnos;
+    private ArrayList<Asignatura> asignaturas;
+    private ArrayList<Profesor> profesores;
 
     public Curso(String nombre) {
         this.nombre = nombre;
-        alumnos = new ArrayList<>();
-        asignaturas = new ArrayList<>();
-        profesores = new ArrayList<>();
+        this.alumnos = new ArrayList<>();
+        this.asignaturas = new ArrayList<>();
+        this.profesores = new ArrayList<>();
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public void agregarAlumno(Alumno a) {
@@ -30,15 +36,17 @@ public class Curso {
         System.out.println("CURSO: " + nombre);
 
         for (Alumno a : alumnos) {
-            System.out.println("Alumno: " + a.nombre);
+            System.out.print("Alumnos: ");
+            a.mostrarDetalles();
         }
 
         for (Asignatura as : asignaturas) {
-            System.out.println("Asignatura: " + as.nombre);
+            System.out.println("Model.Asignatura: " + as.getNombre());
         }
 
         for (Profesor p : profesores) {
-            System.out.println("Profesor: " + p.nombre);
+            System.out.print("Profesores: ");
+            p.mostrarDetalles();
         }
     }
 }
