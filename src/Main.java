@@ -1,3 +1,9 @@
+import Model.Alumno;
+import Model.Asignatura;
+import Model.Curso;
+import Model.Profesor;
+import Service.GestorMatriculas;
+
 public class Main {
 
     public static void main(String[] args) {
