@@ -7,7 +7,10 @@ import Model.Profesor;
 
 import java.util.ArrayList;
 
-public class GestorMatriculas {
+/**
+ * Sirve para gestionar la lógica del colegio, calculos, etc.
+ */
+public class GestorMatriculas implements InGestorMatriculas{
 
     private ArrayList<Matricula> matriculas;
 
@@ -15,19 +18,29 @@ public class GestorMatriculas {
         matriculas = new ArrayList<>();
     }
 
-    public void crearMatricula(Alumno a, Asignatura as, Profesor p, double nota) {
+    /**
+     * Sirve para crear matriculas
+     * @param alumno
+     * @param asignatura
+     * @param profesor
+     * @param nota
+     */
+    public void crearMatricula(Alumno alumno, Asignatura asignatura, Profesor profesor, double nota) {
 
         if (nota < 0) {
             nota = 0;
         }
 
-        Matricula m = new Matricula(a, as, p, nota);
+        Matricula m = new Matricula(alumno, asignatura, profesor, nota);
 
         matriculas.add(m);
 
-        a.matricular(m);
+        alumno.matricular(m);
     }
 
+    /**
+     * Sirve para mostrar todas las matriculas
+     */
     public void mostrarTodas() {
         for (Matricula m : matriculas) {
             System.out.println(
@@ -39,6 +52,9 @@ public class GestorMatriculas {
         }
     }
 
+    /**
+     * Sirve para mostrar todos los alumnos aprobados
+     */
     public void mostrarAprobados() {
         for (Matricula m : matriculas) {
             if (m.getNota() >= 5) {
@@ -47,6 +63,10 @@ public class GestorMatriculas {
         }
     }
 
+    /**
+     * Sirve para subir la nota de todos los alumnos
+     * @param puntos
+     */
     public void subirNotaTodos(double puntos) {
         for (Matricula m : matriculas) {
             m.setNota(m.getNota() + puntos);
@@ -57,6 +77,10 @@ public class GestorMatriculas {
         }
     }
 
+    /**
+     * Calcula la media global
+     * @return
+     */
     public double mediaGlobal() {
         double suma = 0;
 
